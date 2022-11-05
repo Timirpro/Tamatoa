@@ -1,4 +1,7 @@
-﻿* {
+﻿:root {
+    --level: ;
+}
+* {
     margin: 0;
     padding: 0;
 }
@@ -26,19 +29,26 @@ li {
     width: 15em;
     height: 15em;
     transform-origin: 100% 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: 0px 0px 1px 1px #000000;
 }
 li:hover {
     background-color: #bba;
+    box-shadow: 0px 0px 0px 0px black;
 }
 li:nth-child(1) {
-    transform: rotate(-30deg) skew(-30deg) scale(2);
+    transform: translateY(99%) scale(2);
 }
 li:nth-child(2) {
+    transform: translateY(99%) rotate(90deg) scale(2);
+}
+#sec_1 {
+    transform: rotate(-30deg) skew(-30deg) scale(2);
+}
+#sec_2 {
     transform: rotate(90deg) skew(-30deg) scale(2);
 }
-li:nth-child(3) {
+#sec_3 {
     transform: rotate(210deg) skew(-30deg) scale(2);
 }
 .text {
