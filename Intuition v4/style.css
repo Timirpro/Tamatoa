@@ -34,7 +34,10 @@ li {
 }
 li:hover {
     background-color: #bba;
-    box-shadow: 0px 0px 0px 0px black;
+    /* box-shadow: 0px 0px 0px 0px black; */
+}
+#green {
+    background-color: green;
 }
 li:nth-child(1) {
     transform: translateY(99%) scale(2);
@@ -42,14 +45,8 @@ li:nth-child(1) {
 li:nth-child(2) {
     transform: translateY(99%) rotate(90deg) scale(2);
 }
-#sec_1 {
-    transform: rotate(-30deg) skew(-30deg) scale(2);
-}
-#sec_2 {
-    transform: rotate(90deg) skew(-30deg) scale(2);
-}
-#sec_3 {
-    transform: rotate(210deg) skew(-30deg) scale(2);
+li:not(:nth-child(1)):not(:nth-child(2)) {
+    display: none;
 }
 .text {
     display: flex;
