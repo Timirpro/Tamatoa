@@ -1,7 +1,4 @@
-﻿:root {
-    --level: ;
-}
-* {
+﻿* {
     margin: 0;
     padding: 0;
 }
@@ -9,7 +6,7 @@ body{
     background-color: #efe;
 }
 .wheel {
-    margin-top: 250px;
+    margin-top: 80px;
 }
 ul {
     width: 30em;
@@ -29,15 +26,13 @@ li {
     width: 15em;
     height: 15em;
     transform-origin: 100% 100%;
-    /* overflow: hidden; */
     box-shadow: 0px 0px 1px 1px #000000;
 }
 li:hover {
     background-color: #bba;
-    /* box-shadow: 0px 0px 0px 0px black; */
 }
 #green {
-    background-color: green;
+    background-color: #90EE90;
 }
 li:nth-child(1) {
     transform: translateY(99%) scale(2);
@@ -56,4 +51,17 @@ li:not(:nth-child(1)):not(:nth-child(2)) {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-size: 50px;
+    transform: translateX(10px);
+}
+.tier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 70px;
+    transform: translateX(10px);
+    color: #999966;
+    text-shadow: 1px 1px 4px black;
 }
