@@ -5,6 +5,8 @@ let count = 0;
 let stat = 0;
 let level = 1;
 let sum = 0;
+let maxAttempts = 3;
+let attempts;
 let levelCount = new Array(maxLevel).fill(0);
 let levelWin = new Array(maxLevel).fill(0);
 let levelStat = new Array(maxLevel).fill(0);
@@ -36,6 +38,7 @@ function pickFunction() {
     levelCount[level - 1]++;
     if (Array.from(this.parentNode.children).indexOf(this) == int_rnd_value) {
         console.log("correct");
+        attempts = maxAttempts;
         levelWin[level - 1]++;
         stat = (stat * count + 100) / (count + 1);
         statistics.innerText = Math.round(stat).toString() + "%";
@@ -54,8 +57,9 @@ function pickFunction() {
         stat = (stat * count + 0) / (count + 1);
         statistics.innerText = Math.round(stat).toString() + "%";
         count++;
+        attempts--;
         showGreenSector();
-        if (level > 1) {
+        if (level > 1 & attempts < 1) {
             setTimeout(function() {
                 removeElements();
                 level = 1;
