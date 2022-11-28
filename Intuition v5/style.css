@@ -60,11 +60,41 @@ li:not(:nth-child(1)):not(:nth-child(2)) {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2em;
+    margin-top: 1em;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    font-size: 70px;
-    transform: translateX(10px);
+    font-size: 60px;
+    transform: translateX(-3em);
     color: #633018;
     text-shadow: 1px 1px 3px black;
+}
+.table {
+    display: flex;
+    justify-content: center;
+    margin-top: 7em;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #2a1c18;
+    /* background-color: rgb(209, 209, 192); */
+}
+th, td {
+    width: 5em;
+    height: 2em;
+    background-color: rgb(190, 172, 155);
+    border: 1px solid #2a1c18;
+    border-radius: 5%;
+}
+td:first-child {
+    width: 10.5em;
+    font-weight: bold;
+}
+button {
+    width: 10em;
+    height: 1.5em;
+    margin-right: 11em;
+    font-size: 0.3em;
+    background-color: rgb(221, 211, 200);
+    border: 2px solid #2a1c18;
+    border-radius: 10px;
 }

@@ -5,7 +5,7 @@ let count = 0;
 let stat = 0;
 let level = 1;
 let sum = 0;
-let maxAttempts = 3;
+let maxAttempts = 1;
 let attempts;
 let levelCount = new Array(maxLevel).fill(0);
 let levelWin = new Array(maxLevel).fill(0);
@@ -13,7 +13,9 @@ let levelStat = new Array(maxLevel).fill(0);
 let levelAvgStat = new Array(maxLevel).fill(0);
 let sectors = document.querySelectorAll('.sectors');
 let statistics = document.querySelector('.text');
-let tier = document.querySelector('.tier');
+let tier = document.querySelector('p');
+let difficulty = document.querySelector('button');
+let diffNames = ['Difficulty: normal','Difficulty: easy','Difficulty: very easy'];
 for (let i = 0; i < maxLevel + 1; i++) {
     sectors[i].addEventListener("click", pickFunction);
 }
@@ -41,7 +43,6 @@ function pickFunction() {
         attempts = maxAttempts;
         levelWin[level - 1]++;
         stat = (stat * count + 100) / (count + 1);
-        statistics.innerText = Math.round(stat).toString() + "%";
         count++;
         showGreenSector();
         if (level < maxLevel) {
@@ -55,7 +56,6 @@ function pickFunction() {
     else {
         console.log("wrong");
         stat = (stat * count + 0) / (count + 1);
-        statistics.innerText = Math.round(stat).toString() + "%";
         count++;
         attempts--;
         showGreenSector();
@@ -73,13 +73,14 @@ function pickFunction() {
         levelAvgStat[i] = 1 / (i + 2);
         sum += levelAvgStat[i] * levelCount[i];
     }
-    console.log(count);
-    console.log((sum / count).toFixed(2));
+    console.log('total count = ' + count);
+    // console.log((sum / count).toFixed(2));
+    showStatistic ();
     sum = 0;
-    // console.log(levelCount.join("      "));
-    // console.log(levelWin.join("      "));
-    console.log(levelAvgStat.map(a => a.toFixed(2)).join("   "));
-    console.log(levelStat.map(a => a.toFixed(2)).join("   "));
+    console.log(levelCount.join("      "));
+    console.log(levelWin.join("      "));
+    // console.log(levelAvgStat.map(a => a.toFixed(2)).join("   "));
+    // console.log(levelStat.map(a => a.toFixed(2)).join("   "));
     setTimeout(function(){
         randomChoice();
     }, 395);
@@ -96,3 +97,22 @@ function removeElements() {
         sectors[i].removeAttribute("style");
     }
 }
+function showStatistic () {
+    let overallAvg = document.querySelector('td:nth-child(2)');
+    let currentStat = document.querySelector('tr:nth-child(3) > td:nth-child(2)');
+    let currentLvl = document.querySelector('tr:nth-child(3) > td:nth-child('+(level + 2)+')');
+    overallAvg.innerHTML = Math.round(100 * (sum / count));
+    currentStat.innerHTML = Math.round(stat);
+    currentLvl.innerHTML = Math.round(100 * (levelStat[level - 1]));
+}
+function difficultySwitch() {
+    // location.reload();
+    if (maxAttempts < 3) {
+        maxAttempts++;
+    }
+    else {
+        maxAttempts = 1;
+    }
+    difficulty.innerHTML = diffNames[maxAttempts-1];
+}
+    
