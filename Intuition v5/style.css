@@ -22,14 +22,15 @@ ul {
 li {
     position: absolute;
     border: 1px solid #2a1c18;
-    background-color: #ccb;
+    background-color: rgb(230, 230, 211);
+    /* background-color: #ccb; */
     width: 15em;
     height: 15em;
     transform-origin: 100% 100%;
     box-shadow: 0px 0px 1px 1px #2a1c18;
 }
 li:hover {
-    background-color: #bba;
+    background-color: rgb(209, 209, 183);
 }
 #green {
     background-color: #90EE90;
@@ -64,26 +65,27 @@ li:not(:nth-child(1)):not(:nth-child(2)) {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-size: 60px;
-    transform: translateX(-3em);
+    transform: translateX(-3.3em);
     color: #633018;
     text-shadow: 1px 1px 3px black;
 }
 .table {
-    display: flex;
-    justify-content: center;
-    margin-top: 7em;
+    margin: 7em auto 0 auto;;
+    padding: 2px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: #2a1c18;
-    /* background-color: rgb(209, 209, 192); */
+    border: 2px solid #2a1c18;
+    border-radius: 10px;
+    background-color: rgb(223, 191, 159);
 }
 th, td {
     width: 5em;
     height: 2em;
-    background-color: rgb(190, 172, 155);
+    background-color: rgb(230, 230, 211);
     border: 1px solid #2a1c18;
-    border-radius: 5%;
+    border-radius: 4px;
 }
 td:first-child {
     width: 10.5em;
@@ -92,9 +94,12 @@ td:first-child {
 button {
     width: 10em;
     height: 1.5em;
-    margin-right: 11em;
+    margin-right: 13em;
     font-size: 0.3em;
-    background-color: rgb(221, 211, 200);
+    background-color: rgb(230, 230, 211);
     border: 2px solid #2a1c18;
     border-radius: 10px;
+}
+button:hover {
+    background-color: #90EE90;
 }
